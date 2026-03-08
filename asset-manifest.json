@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/NEXUS-architecture/static/css/main.782ed9c4.css",
-    "main.js": "/NEXUS-architecture/static/js/main.040c9d08.js",
+    "main.css": "/NEXUS-architecture/static/css/main.9d1328b5.css",
+    "main.js": "/NEXUS-architecture/static/js/main.be42d000.js",
     "static/js/453.cea8efdb.chunk.js": "/NEXUS-architecture/static/js/453.cea8efdb.chunk.js",
     "index.html": "/NEXUS-architecture/index.html",
-    "main.782ed9c4.css.map": "/NEXUS-architecture/static/css/main.782ed9c4.css.map",
-    "main.040c9d08.js.map": "/NEXUS-architecture/static/js/main.040c9d08.js.map",
+    "main.9d1328b5.css.map": "/NEXUS-architecture/static/css/main.9d1328b5.css.map",
+    "main.be42d000.js.map": "/NEXUS-architecture/static/js/main.be42d000.js.map",
     "453.cea8efdb.chunk.js.map": "/NEXUS-architecture/static/js/453.cea8efdb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.782ed9c4.css",
-    "static/js/main.040c9d08.js"
+    "static/css/main.9d1328b5.css",
+    "static/js/main.be42d000.js"
   ]
 }
