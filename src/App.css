@@ -1,38 +1,195 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.hero {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 42px;
+}
+
+.hero p {
+  margin: 0;
+  color: #52607a;
+  font-size: 18px;
+}
+
+.panel {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+}
+
+.mt {
+  margin-top: 16px;
+}
+
+.box {
+  background: #fff;
+  border: 2px solid #dfe7f4;
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 120px;
+}
+
+.box-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.box-content {
+  color: #47546d;
+  line-height: 1.6;
+}
+
+.wide {
+  width: 100%;
+}
+
+.arrow-down {
+  text-align: center;
+  font-size: 34px;
+  margin: 8px 0 12px;
+  color: #7f8aa3;
+}
+
+.frontend {
+  background: #eef6ff;
+  border-color: #b6d4ff;
+}
+
+.gateway {
+  background: #edf0ff;
+  border-color: #bcc5ff;
+}
+
+.service {
+  background: #effcf6;
+  border-color: #bde9cf;
+}
+
+.event {
+  background: #fff5eb;
+  border-color: #ffd2a8;
+}
+
+.automation {
+  background: #fff3d8;
+  border-color: #f1ce6a;
+}
+
+.data {
+  background: #f4efff;
+  border-color: #d4c1ff;
+}
+
+.external {
+  background: #f6f7fa;
+  border-color: #d8dde8;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.column {
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.column h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.frontend-zone {
+  background: #f0f7ff;
+  border: 2px dashed #9fc8ff;
+}
+
+.backend-zone {
+  background: #f8f9fc;
+  border: 2px dashed #b9c0d2;
+}
+
+.column .box {
+  margin-bottom: 14px;
+}
+
+.flow-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.flow-step {
+  background: #ffffff;
+  border: 2px solid #dfe7f4;
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-weight: 600;
+  min-width: 160px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flow-arrow {
+  font-size: 28px;
+  color: #7f8aa3;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 1000px) {
+  .grid-3,
+  .grid-2,
+  .split {
+    grid-template-columns: 1fr;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .hero h1 {
+    font-size: 32px;
   }
 }
