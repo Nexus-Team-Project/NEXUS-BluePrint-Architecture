@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/NEXUS-BluePrint-Architecture/static/css/main.49c885d4.css",
-    "main.js": "/NEXUS-BluePrint-Architecture/static/js/main.8647cf81.js",
+    "main.js": "/NEXUS-BluePrint-Architecture/static/js/main.c993d9b8.js",
     "static/js/453.cea8efdb.chunk.js": "/NEXUS-BluePrint-Architecture/static/js/453.cea8efdb.chunk.js",
     "index.html": "/NEXUS-BluePrint-Architecture/index.html",
     "main.49c885d4.css.map": "/NEXUS-BluePrint-Architecture/static/css/main.49c885d4.css.map",
-    "main.8647cf81.js.map": "/NEXUS-BluePrint-Architecture/static/js/main.8647cf81.js.map",
+    "main.c993d9b8.js.map": "/NEXUS-BluePrint-Architecture/static/js/main.c993d9b8.js.map",
     "453.cea8efdb.chunk.js.map": "/NEXUS-BluePrint-Architecture/static/js/453.cea8efdb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.49c885d4.css",
-    "static/js/main.8647cf81.js"
+    "static/js/main.c993d9b8.js"
   ]
 }
