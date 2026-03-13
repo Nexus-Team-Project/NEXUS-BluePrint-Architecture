@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/NEXUS-BluePrint-Architecture/static/css/main.fbc5c261.css",
-    "main.js": "/NEXUS-BluePrint-Architecture/static/js/main.d9efdee3.js",
+    "main.css": "/NEXUS-BluePrint-Architecture/static/css/main.66baf908.css",
+    "main.js": "/NEXUS-BluePrint-Architecture/static/js/main.7b25938b.js",
     "static/js/453.cea8efdb.chunk.js": "/NEXUS-BluePrint-Architecture/static/js/453.cea8efdb.chunk.js",
     "index.html": "/NEXUS-BluePrint-Architecture/index.html",
-    "main.fbc5c261.css.map": "/NEXUS-BluePrint-Architecture/static/css/main.fbc5c261.css.map",
-    "main.d9efdee3.js.map": "/NEXUS-BluePrint-Architecture/static/js/main.d9efdee3.js.map",
+    "main.66baf908.css.map": "/NEXUS-BluePrint-Architecture/static/css/main.66baf908.css.map",
+    "main.7b25938b.js.map": "/NEXUS-BluePrint-Architecture/static/js/main.7b25938b.js.map",
     "453.cea8efdb.chunk.js.map": "/NEXUS-BluePrint-Architecture/static/js/453.cea8efdb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbc5c261.css",
-    "static/js/main.d9efdee3.js"
+    "static/css/main.66baf908.css",
+    "static/js/main.7b25938b.js"
   ]
 }
