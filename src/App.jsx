@@ -216,11 +216,12 @@ function Page({ chapter, children, minimal = false }) {
   return (
     <section className={`page ${minimal ? "page-minimal" : ""}`}>
       <div className="page-header">
-        <div className="page-kicker">
-          {chapter.number} {chapter.title}
+        <div className="page-header-text">
+          <h1>{chapter.title}</h1>
+          {chapter.subtitle && <p>{chapter.subtitle}</p>}
         </div>
-        <h1>{chapter.title}</h1>
-        {chapter.subtitle && <p>{chapter.subtitle}</p>}
+
+        <img src={logo} alt="NEXUS" className="page-header-logo" />
       </div>
 
       <div className="page-body">{children}</div>
