@@ -651,3 +651,175 @@ img {
     box-shadow: none;
   }
 }
+/* ===============================
+   NEXUS OPERATING MODEL DIAGRAM
+   =============================== */
+
+.operating-model{
+  max-width:980px;
+  margin:36px auto;
+}
+
+.operating-model-header{
+  margin-bottom:28px;
+}
+
+.operating-model-kicker{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#eaf2ff;
+  color:#2558b8;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.operating-model h1{
+  margin:0 0 10px;
+  font-size:40px;
+  line-height:1.06;
+  letter-spacing:-.02em;
+  color:#1b2d44;
+}
+
+.operating-model-intro{
+  margin:0;
+  max-width:760px;
+  color:#5c6f86;
+  font-size:17px;
+  line-height:1.6;
+}
+
+.operating-diagram-card{
+  background:linear-gradient(180deg,#ffffff 0%,#f7fbff 100%);
+  border:1px solid #e1eaf4;
+  border-radius:24px;
+  padding:30px 26px;
+  box-shadow:
+    0 16px 34px rgba(17,49,96,.07),
+    inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.operating-diagram{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+.diagram-node{
+  width:min(560px,100%);
+  border-radius:18px;
+  padding:18px 20px 16px;
+  text-align:center;
+  border:1px solid #dfe8f3;
+  box-shadow:0 10px 24px rgba(17,49,96,.05);
+}
+
+.diagram-node-title{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.diagram-node-text{
+  font-size:14px;
+  color:#53677f;
+  line-height:1.45;
+}
+
+.diagram-arrow{
+  font-size:28px;
+  line-height:1;
+  color:#7d95b4;
+  font-weight:700;
+}
+
+.node-organizations{
+  background:linear-gradient(180deg,#f8fbff 0%,#eef5ff 100%);
+}
+
+.node-services{
+  background:linear-gradient(180deg,#f7fbff 0%,#edf4ff 100%);
+}
+
+.node-users{
+  background:linear-gradient(180deg,#f9fcff 0%,#eff7ff 100%);
+}
+
+.node-ecosystems{
+  background:linear-gradient(180deg,#f5fbff 0%,#eaf5ff 100%);
+}
+
+.node-platform{
+  background:linear-gradient(135deg,#123862 0%,#0d2347 100%);
+  border-color:#163861;
+}
+
+.node-platform .diagram-node-title,
+.node-platform .diagram-node-text{
+  color:#ffffff;
+}
+
+.operating-model-notes{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+  margin-top:24px;
+}
+
+.operating-note{
+  background:#ffffff;
+  border:1px solid #e1eaf4;
+  border-radius:16px;
+  padding:14px 16px;
+  color:#54687f;
+  font-size:14px;
+  line-height:1.5;
+  box-shadow:0 8px 20px rgba(17,49,96,.04);
+}
+
+.operating-note strong{
+  color:#18365c;
+}
+
+@media (max-width:980px){
+  .operating-model-notes{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:640px){
+
+  .operating-model h1{
+    font-size:30px;
+  }
+
+  .operating-model-intro{
+    font-size:15px;
+  }
+
+  .operating-diagram-card{
+    padding:20px 16px;
+  }
+
+  .diagram-node{
+    padding:16px 14px 14px;
+  }
+
+  .diagram-node-title{
+    font-size:16px;
+  }
+
+  .diagram-node-text{
+    font-size:13px;
+  }
+
+  .operating-model-notes{
+    grid-template-columns:1fr;
+  }
+}
