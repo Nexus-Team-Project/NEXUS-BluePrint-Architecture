@@ -861,30 +861,63 @@ img {
   .operating-model-notes{
     grid-template-columns:1fr;
   }
-  .overview-fullscreen-hero{
+  /* ===============================
+   Overview Full Screen Hero
+   =============================== */
+
+.overview-fullscreen-hero{
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   margin: -10px -10px 48px;
 }
 
 .overview-fullscreen-hero img{
-  width: 100%;
-  max-width: 1280px;
-  border-radius: 20px;
-  display: block;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  width:100%;
+  max-width:1280px;
+  border-radius:20px;
+  display:block;
+
+  box-shadow:
+  0 30px 60px rgba(0,0,0,0.35),
+  0 0 0 1px rgba(255,255,255,0.05);
 }
 
-@media (max-width: 900px){
+/* Mobile */
+
+@media (max-width:900px){
+
   .overview-fullscreen-hero{
-    min-height: auto;
-    margin: 0 0 28px;
+    min-height:auto;
+    margin:0 0 28px;
   }
 
   .overview-fullscreen-hero img{
-    border-radius: 12px;
+    border-radius:12px;
   }
+
 }
+}
+/* =================================
+   NEXUS Vision Hero Effect
+   ================================= */
+
+.overview-fullscreen-hero img{
+  animation: nexusHeroFade 1.2s ease-out;
+  transform: translateY(8px);
+}
+
+@keyframes nexusHeroFade{
+  0%{
+    opacity:0;
+    transform:translateY(40px) scale(0.98);
+    filter: blur(6px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
