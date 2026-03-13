@@ -124,7 +124,7 @@ function Layout({ children }) {
           <div className="brand-title-stack">
             <div className="brand-line brand-line-1">NEXUS</div>
             <div className="brand-line brand-line-2">Enterprise Digital Services Ecosystem</div>
-            <div className="brand-line brand-line-3">Architecture Blueprint</div>
+            <div className="brand-tag">ARCHITECTURE BLUEPRINT</div>
           </div>
         </div>
 
@@ -167,7 +167,6 @@ function Layout({ children }) {
     </div>
   );
 }
-
 function ChapterFooter({ chapter }) {
   return (
     <footer className="chapter-footer">

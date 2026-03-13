@@ -508,11 +508,17 @@ img {
     overflow: visible;
     padding: 14px 16px 14px;
   }
-
-  .brand-logo {
-    width: 170px;
-  }
-
+.brand-tag {
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+}
+.brand-logo {
+  width: 160px;
+}
   .mobile-menu-toggle {
     display: block;
   }
