@@ -2,6 +2,7 @@ import { HashRouter, Routes, Route, NavLink, Link, useLocation } from "react-rou
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import logo from "./assets/nexus-logo.png";
+import overviewDiagram from "./assets/nexus-echosystem-model.png";
 
 const chapters = [
   {
@@ -331,72 +332,40 @@ function OverviewPage() {
 
   return (
     <Page chapter={chapter}>
+      <div className="overview-fullscreen-hero">
+        <img
+          src="/images/nexus-ecosystem.png"
+          alt="NEXUS Ecosystem"
+        />
+      </div>
+
       <HeroPanel
         eyebrow="Business Context"
         title="Organizations today are expected to continuously deliver meaningful value to their users."
-        text="The NEXUS blueprint begins with the reality organizations face when trying to operate a growing range of digital services for customers, employees, and partners."
+        text="Organizations are expected to operate a growing range of digital services across customers, employees, and partners."
       />
 
       <div className="story-block">
         <p>
-          Customers, employees, and partners increasingly expect organizations to provide a growing
-          range of digital services — from benefits and engagement programs to financial services,
-          loyalty offerings, and everyday digital utilities.
+          Operating and coordinating these services across providers, systems, and user interactions becomes increasingly complex.
         </p>
 
         <p>
-          However, operating such services is complex.
+          NEXUS introduces a structured model that enables organizations to operate and expand digital service ecosystems.
         </p>
-
-        <p>
-          Organizations must manage multiple service providers, integrations, user interactions,
-          operational workflows, and data flows. As the number of services grows, maintaining
-          consistency, scalability, and operational control becomes increasingly difficult.
-        </p>
-
-        <p>
-          As a result, many organizations struggle to expand their service offerings while
-          maintaining a coherent operational model.
-        </p>
-
-        <p>
-          NEXUS addresses this challenge.
-        </p>
-
-        <p>
-          NEXUS enables organizations to operate digital services for their users in a structured
-          and scalable way.
-        </p>
-
-       <p>
-Operating and coordinating such ecosystems requires a structured operational model.
-</p>
-
-<p>
-The NEXUS model introduces a structured approach that enables organizations to operate
-services and coordinate service ecosystems at scale.
-</p>
-
-<p>
-The platform described later in this blueprint provides the infrastructure that enables
-this model.
-</p>
       </div>
 
       <div className="grid three-up">
         <Card title="Organizations" tone="interaction">
-          Organizations are the starting point of the model. They need to deliver services and
-          maintain operational coherence as their service footprint grows.
+          Organizations are the starting point of the model.
         </Card>
 
         <Card title="Users" tone="domain">
-          Users receive value through services. Their expectations drive service growth, experience
-          quality, and the need for consistency.
+          Users receive value through services.
         </Card>
 
         <Card title="Enablement" tone="core">
-          NEXUS exists to enable organizations to operate those services in a scalable, structured,
-          and manageable way.
+          NEXUS enables structured and scalable service operation.
         </Card>
       </div>
     </Page>
