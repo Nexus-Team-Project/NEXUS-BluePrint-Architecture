@@ -224,7 +224,7 @@ img {
 }
 
 .page-minimal .page-header {
-  margin-bottom: 18px;
+  margin-bottom: 28px;
 }
 
 .page-kicker {
@@ -704,11 +704,8 @@ img {
 }
 
 .operating-model-intro{
-  margin:0;
-  max-width:760px;
-  color:#5c6f86;
-  font-size:17px;
-  line-height:1.6;
+  margin-top: 6px;
+  max-width: 640px;
 }
 
 .operating-diagram-card{
