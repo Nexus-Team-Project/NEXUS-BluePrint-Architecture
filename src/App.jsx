@@ -9,103 +9,107 @@ const chapters = [
     title: "Overview",
     path: "/overview",
     section: "FOUNDATION",
-    subtitle: "Business context and document purpose.",
+    subtitle: "Why organizations need a better way to operate digital services.",
   },
   {
     number: "02",
     title: "Customers & Needs",
     path: "/customers-needs",
     section: "FOUNDATION",
-    subtitle: "The customer problems and business needs the ecosystem is designed to address.",
+    subtitle: "Why service growth creates operational complexity for organizations.",
   },
   {
     number: "03",
     title: "Nexus Services",
     path: "/nexus-services",
     section: "FOUNDATION",
-    subtitle: "The service portfolio that NEXUS delivers through a shared infrastructure approach.",
+    subtitle: "How NEXUS enables organizations to operate meaningful services for their users.",
   },
   {
     number: "04",
     title: "Ecosystem Model",
     path: "/ecosystem-model",
     section: "ECOSYSTEM",
-    subtitle: "The ecosystem structure: actors, value flows, partners, and service participation.",
+    subtitle: "How services connect into a broader ecosystem around organizations and users.",
   },
   {
     number: "05",
     title: "Platform Foundation",
     path: "/platform-foundation",
     section: "PLATFORM",
-    subtitle: "The role of the platform as the technical foundation of the broader ecosystem.",
+    subtitle: "The role of the platform as the enabling infrastructure of the ecosystem.",
   },
   {
     number: "06",
     title: "System Architecture Map",
     path: "/system-architecture-map",
     section: "PLATFORM",
-    subtitle: "Visual reference map of the NEXUS platform architecture.",
+    subtitle: "Visual reference for the NEXUS platform architecture.",
   },
   {
     number: "07",
     title: "Core Platform Services",
     path: "/core-platform-services",
     section: "PLATFORM",
-    subtitle: "The core shared capabilities that enable service delivery across the ecosystem.",
+    subtitle: "The shared platform capabilities that support service operation and scale.",
   },
   {
     number: "08",
     title: "Event & Automation Model",
     path: "/event-automation-model",
     section: "ARCHITECTURE",
-    subtitle: "How events, triggers, workflows, and automation support ecosystem operation.",
+    subtitle: "How events and automation support ecosystem coordination and operation.",
   },
   {
     number: "09",
     title: "Data Architecture",
     path: "/data-architecture",
     section: "ARCHITECTURE",
-    subtitle: "How platform data is structured, governed, and used across operational and analytical needs.",
+    subtitle: "How data supports operation, visibility, and growth across the ecosystem.",
   },
   {
     number: "10",
     title: "Integrations",
     path: "/integrations",
     section: "ARCHITECTURE",
-    subtitle: "How external systems, providers, and partners connect into the NEXUS ecosystem.",
+    subtitle: "How providers, partners, and enterprise systems connect into the model.",
   },
 ];
 
 const sectionOrder = ["FOUNDATION", "ECOSYSTEM", "PLATFORM", "ARCHITECTURE"];
 
-const chapterMap = Object.fromEntries(chapters.map((c, index) => [c.path, { ...c, index }]));
+const chapterMap = Object.fromEntries(
+  chapters.map((chapter, index) => [chapter.path, { ...chapter, index }])
+);
 
 const architectureMapSrc = `${process.env.PUBLIC_URL}/architecture/nexus-architecture-map.png`;
 
-function useScrollToTop() {
+function ScrollToTop() {
   const location = useLocation();
 
   useEffect(() => {
-    const contentTop = document.getElementById("content-top");
-    if (contentTop) {
-      contentTop.scrollIntoView({ behavior: "auto", block: "start" });
+    const node = document.getElementById("content-top");
+    if (node) {
+      node.scrollIntoView({ behavior: "auto", block: "start" });
     } else {
       window.scrollTo(0, 0);
     }
   }, [location.pathname]);
+
+  return null;
 }
 
 function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useScrollToTop();
-
-  const grouped = useMemo(() => {
-    return sectionOrder.map((section) => ({
-      section,
-      items: chapters.filter((chapter) => chapter.section === section),
-    }));
-  }, []);
+  const grouped = useMemo(
+    () =>
+      sectionOrder.map((section) => ({
+        section,
+        items: chapters.filter((chapter) => chapter.section === section),
+      })),
+    []
+  );
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
@@ -138,6 +142,7 @@ function Layout({ children }) {
           {grouped.map(({ section, items }) => (
             <div key={section} className="sidebar-group">
               <div className="sidebar-group-title">{section}</div>
+
               <nav className="nav">
                 {items.map((item) => (
                   <NavLink
@@ -252,31 +257,70 @@ function OverviewPage() {
     <Page chapter={chapter}>
       <HeroPanel
         eyebrow="Business Context"
-        title="NEXUS is building a business ecosystem powered by a shared platform foundation."
-        text="This blueprint describes the technical infrastructure that enables the wider NEXUS ecosystem of services, partners, users, and operational flows."
+        title="Organizations today are expected to continuously deliver meaningful value to their users."
+        text="The NEXUS blueprint begins with the reality organizations face when trying to operate a growing range of digital services for customers, employees, and partners."
       />
 
-      <div className="grid two-up">
-        <Card title="Document Purpose" tone="core">
-          This document explains how the NEXUS ecosystem is structured from business context to
-          platform architecture, while keeping the technical explanation aligned with business logic.
-        </Card>
+      <div className="story-block">
+        <p>
+          Customers, employees, and partners increasingly expect organizations to provide a growing
+          range of digital services — from benefits and engagement programs to financial services,
+          loyalty offerings, and everyday digital utilities.
+        </p>
 
-        <Card title="Reading Logic" tone="interaction">
-          The reader is guided from customer needs, to services, to ecosystem logic, to platform
-          foundation, and only then into the detailed technical architecture.
-        </Card>
+        <p>
+          However, operating such services is complex.
+        </p>
+
+        <p>
+          Organizations must manage multiple service providers, integrations, user interactions,
+          operational workflows, and data flows. As the number of services grows, maintaining
+          consistency, scalability, and operational control becomes increasingly difficult.
+        </p>
+
+        <p>
+          As a result, many organizations struggle to expand their service offerings while
+          maintaining a coherent operational model.
+        </p>
+
+        <p>
+          NEXUS addresses this challenge.
+        </p>
+
+        <p>
+          NEXUS enables organizations to operate digital services for their users in a structured
+          and scalable way.
+        </p>
+
+        <p>
+          Over time these services can connect with partners, suppliers, and additional capabilities,
+          forming a broader service ecosystem around the organization and its users.
+        </p>
+
+        <p>
+          The NEXUS platform provides the infrastructure that enables these services and ecosystems
+          to operate and scale.
+        </p>
+
+        <p>
+          This blueprint describes the architecture that supports this model.
+        </p>
       </div>
 
       <div className="grid three-up">
-        <Card title="Company" tone="domain">
-          NEXUS is the company and business entity operating and growing the ecosystem.
+        <Card title="Organizations" tone="interaction">
+          Organizations are the starting point of the model. They need to deliver services and
+          maintain operational coherence as their service footprint grows.
         </Card>
-        <Card title="Ecosystem" tone="external">
-          The ecosystem includes services, actors, partners, providers, and value flows.
+
+        <Card title="Users" tone="domain">
+          Users receive value through services. Their expectations drive service growth, experience
+          quality, and the need for consistency.
         </Card>
-        <Card title="Platform" tone="access">
-          The platform is the shared technical infrastructure that enables the ecosystem.
+
+        <Card title="Enablement" tone="core">
+          NEXUS exists to enable organizations to operate those services in a scalable, structured,
+          and manageable way.
         </Card>
       </div>
     </Page>
@@ -289,38 +333,65 @@ function CustomersNeedsPage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Customer Context"
-        title="Customer needs come first."
-        text="The ecosystem exists because organizations need a coherent way to deliver, operate, and expand digital services without fragmenting experience, control, and operational logic."
+        eyebrow="Operational Reality"
+        title="The challenge is not only creating services. It is operating them well."
+        text="As organizations expand service offerings, complexity grows across providers, processes, interactions, and data flows."
       />
 
-      <div className="grid three-up">
-        <Card title="Fragmented Services" tone="interaction">
-          Customers increasingly consume services that span payments, benefits, commerce,
-          support, and partner interactions, yet many organizations still manage them as separate
-          disconnected applications.
-        </Card>
+      <div className="story-block">
+        <p>
+          Organizations today operate in environments where users expect continuous access to
+          valuable digital services.
+        </p>
 
-        <Card title="Operational Complexity" tone="governance">
-          As services multiply, organizations struggle with orchestration, consistency,
-          control, policy management, and ecosystem scalability.
-        </Card>
+        <p>
+          Employees expect benefits and engagement services.
+          Customers expect loyalty programs, financial capabilities, and personalized offerings.
+          Partners increasingly interact with organizations through digital service channels.
+        </p>
 
-        <Card title="Need for a Shared Model" tone="core">
-          Customers need a coordinated operating model where multiple digital services can
-          exist inside one governed and extensible ecosystem.
-        </Card>
+        <p>
+          As a result, organizations are expanding the range of services they provide to their users.
+        </p>
+
+        <p>
+          However, managing these services is not simple.
+        </p>
+
+        <p>
+          Each service often involves different suppliers, integrations, operational processes,
+          user interactions, and data flows. As more services are introduced, organizations must
+          manage growing complexity across multiple systems and providers.
+        </p>
+
+        <p>
+          In many cases, services are introduced individually over time, without a unified
+          operational model. This creates fragmentation, operational inefficiencies, and limited
+          scalability.
+        </p>
+
+        <p>
+          Organizations therefore face a structural challenge:
+        </p>
+
+        <p className="highlight-line">
+          how to operate multiple services for their users in a coordinated, scalable, and manageable way.
+        </p>
+
+        <p>
+          This need creates the foundation for the NEXUS model described in the following sections.
+        </p>
       </div>
 
       <div className="grid two-up">
-        <Card title="Business Need" tone="domain">
-          Enterprises need the ability to launch and manage a broader digital services
-          ecosystem under a coherent business model.
+        <Card title="Growing Service Count" tone="interaction">
+          Service expansion is natural, but it introduces new suppliers, processes, and operating
+          demands that are difficult to coordinate over time.
         </Card>
 
-        <Card title="Technology Need" tone="data">
-          They also need shared technical infrastructure instead of duplicated technical stacks
-          for each new service or partner.
+        <Card title="Lack of a Unified Model" tone="governance">
+          Without a structured model, organizations accumulate fragmented services rather than a
+          scalable service system.
         </Card>
       </div>
     </Page>
@@ -333,25 +404,37 @@ function NexusServicesPage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Services"
-        title="NEXUS delivers services, not just software."
-        text="The business value of NEXUS is expressed through service offerings that operate within a broader ecosystem and are enabled by shared infrastructure."
+        eyebrow="Service Model"
+        title="NEXUS enables organizations to operate services for their users."
+        text="The business logic of NEXUS is service enablement. The company helps organizations operate and expand digital services in a coordinated way."
       />
 
       <div className="grid three-up">
-        <Card title="Service Portfolio" tone="domain">
-          Nexus services can include payment-related capabilities, benefits-oriented capabilities,
-          commerce-related services, partner-enabled experiences, and broader ecosystem functions.
+        <Card title="User-Facing Services" tone="interaction">
+          Organizations can operate services that deliver direct value to users across benefits,
+          engagement, financial capabilities, loyalty, and everyday digital utility.
         </Card>
 
-        <Card title="Shared Experience Logic" tone="interaction">
-          Even when services differ in business purpose, they can share common digital journeys,
-          identity, orchestration, and operational foundations.
+        <Card title="Operationally Structured" tone="core">
+          Services are not treated as isolated launches. They operate through a consistent model
+          that supports coordination, scalability, and control.
         </Card>
 
-        <Card title="Scalable Service Model" tone="core">
-          New services should not require building a new technical world each time. They should
-          be enabled through the same shared platform model.
+        <Card title="Expandable Over Time" tone="external">
+          As new capabilities, partners, and service types are added, the service model can grow
+          into a wider ecosystem without losing coherence.
+        </Card>
+      </div>
+
+      <div className="grid two-up">
+        <Card title="What NEXUS Provides" tone="domain">
+          NEXUS provides the enablement model through which organizations can run multiple services
+          for users with more consistency and less operational fragmentation.
+        </Card>
+
+        <Card title="Why This Matters" tone="governance">
+          The more services organizations operate, the greater the need for a structured model that
+          supports growth without increasing complexity linearly.
         </Card>
       </div>
     </Page>
@@ -364,37 +447,37 @@ function EcosystemModelPage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Ecosystem"
-        title="The value proposition is larger than any single service."
-        text="NEXUS operates in an ecosystem model where users, organizations, service providers, partners, and platform capabilities interact in one connected operating environment."
+        eyebrow="Ecosystem Logic"
+        title="Services become more valuable when they connect into a broader ecosystem."
+        text="Over time, services can extend beyond one-to-one delivery and become part of a wider model involving partners, suppliers, providers, and coordinated value flows."
       />
 
-      <div className="grid two-up">
-        <Card title="Actors" tone="external">
-          The ecosystem includes customers, tenants, partners, service providers, operators,
-          and end users, each contributing to value creation and delivery.
-        </Card>
-
-        <Card title="Value Flows" tone="interaction">
-          The ecosystem creates value through connected flows across services, data,
-          transactions, engagement, and operational coordination.
-        </Card>
-      </div>
-
       <div className="grid three-up">
-        <Card title="Multi-Actor Environment" tone="domain">
-          The ecosystem is not a single application but an environment where multiple
-          actors participate through structured roles and interactions.
+        <Card title="Organizations" tone="interaction">
+          Organizations remain the primary operators of services and the anchor point of the ecosystem.
         </Card>
 
-        <Card title="Shared Coordination" tone="core">
-          Platform-enabled coordination is what allows services and actors to work together
-          as a coherent ecosystem rather than as isolated products.
+        <Card title="Users" tone="domain">
+          Users receive value through multiple connected services, not through a single isolated interaction.
         </Card>
 
-        <Card title="Growth Logic" tone="governance">
-          The ecosystem can expand over time by introducing more services, more actors,
-          and more interaction patterns without changing its foundational model.
+        <Card title="Partners & Providers" tone="external">
+          Partners, suppliers, and providers expand the ecosystem by contributing capabilities,
+          services, and interactions.
+        </Card>
+
+        <Card title="Value Flows" tone="core">
+          The ecosystem is defined by connected flows of service delivery, participation, interaction,
+          and operational coordination.
+        </Card>
+
+        <Card title="Coordination Model" tone="governance">
+          A coherent ecosystem requires structure, not just connectivity. It needs defined roles,
+          relationships, and operating logic.
+        </Card>
+
+        <Card title="Growth Logic" tone="intelligence">
+          Ecosystem growth should expand service value and participation without creating uncontrolled complexity.
         </Card>
       </div>
     </Page>
@@ -407,37 +490,37 @@ function PlatformFoundationPage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Platform"
-        title="The NEXUS Platform is the technical foundation of the ecosystem."
-        text="The platform is not the company and not the whole ecosystem. It is the shared infrastructure that enables services, orchestration, governance, and growth."
+        eyebrow="Enabling Layer"
+        title="The platform is the enabling infrastructure, not the main story."
+        text="Only after the business and ecosystem logic are clear does the blueprint introduce the platform itself: the shared infrastructure that makes coordinated service operation possible."
       />
 
       <div className="grid three-up">
-        <Card title="Shared Infrastructure" tone="core">
-          The platform provides shared technical capabilities that multiple services and actors
-          can use without duplicating infrastructure for each business need.
+        <Card title="Shared Foundation" tone="core">
+          The platform provides a common infrastructure layer that supports multiple services and
+          operational flows without recreating technical foundations for each service.
         </Card>
 
-        <Card title="Interface Layer" tone="interaction">
-          The platform is consumed through UI and MI as formal interfaces, as well as through
-          system APIs where required.
+        <Card title="Enablement Role" tone="interaction">
+          Its purpose is to enable organizations to operate services and ecosystems more effectively,
+          not to replace the business logic of those services.
         </Card>
 
-        <Card title="Governed Foundation" tone="governance">
-          Governance, tenant separation, control, and lifecycle consistency are platform-level
-          characteristics rather than service-specific add-ons.
+        <Card title="Scalability" tone="intelligence">
+          A shared platform foundation allows service growth, ecosystem expansion, and reuse of
+          operational capabilities without equivalent growth in complexity.
         </Card>
       </div>
 
       <div className="grid two-up">
-        <Card title="Platform Principles" tone="access">
-          The platform foundation is API-oriented, multi-tenant aware, modular, and designed
-          to support ecosystem orchestration rather than isolated service delivery.
+        <Card title="Interfaces" tone="access">
+          The platform is accessed through UI, MI, and controlled system interfaces, enabling both
+          user-facing and management-facing operation.
         </Card>
 
-        <Card title="Why It Matters" tone="domain">
-          Without a platform foundation, service growth would create fragmentation,
-          duplicated technical work, and weaker ecosystem scalability.
+        <Card title="Consistency" tone="governance">
+          The foundation supports consistency across identity, control, operational logic, and
+          service coordination.
         </Card>
       </div>
     </Page>
@@ -468,34 +551,34 @@ function CorePlatformServicesPage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Core Services"
-        title="Shared platform services enable the ecosystem to operate consistently."
-        text="Core platform services are not business domains themselves; they are shared capabilities that support multiple services and actors across the ecosystem."
+        eyebrow="Shared Capabilities"
+        title="Core platform services support multiple services across the ecosystem."
+        text="These are not the business services themselves. They are the shared capabilities that make coordinated operation, control, and scale possible."
       />
 
       <div className="grid three-up">
         <Card title="Identity & Access" tone="access">
-          Supports access control, identity context, and interface entry across UI, MI, and system access.
+          Supports access control, participation control, and interface entry across user and management contexts.
         </Card>
 
         <Card title="Tenant Context" tone="core">
-          Preserves organizational boundaries, tenant behavior, and controlled participation on shared infrastructure.
+          Preserves organizational boundaries and controlled operation on shared infrastructure.
         </Card>
 
-        <Card title="Workflow & Orchestration" tone="event">
-          Supports service coordination, activity sequencing, and operational flow management.
+        <Card title="Workflow & Coordination" tone="event">
+          Supports service sequencing, orchestration, and coordinated platform behavior.
         </Card>
 
         <Card title="Policy & Governance" tone="governance">
-          Enables rules, constraints, lifecycle control, and governance logic at platform level.
+          Supports rules, constraints, and platform-wide control logic.
         </Card>
 
-        <Card title="Session & Interaction Support" tone="interaction">
-          Supports continuity of user and management interactions across multiple service experiences.
+        <Card title="Interaction Support" tone="interaction">
+          Enables continuity across user-facing and management-facing service journeys.
         </Card>
 
         <Card title="Shared Operational Backbone" tone="intelligence">
-          Enables common monitoring, observability, and platform-wide intelligence capabilities.
+          Supports observability, monitoring, and platform-wide operational awareness.
         </Card>
       </div>
     </Page>
@@ -508,32 +591,34 @@ function EventAutomationModelPage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Technical Architecture"
-        title="Events and automation turn the platform into an operating system for the ecosystem."
-        text="The event and automation model explains how activity signals, triggers, workflows, and system responses support dynamic coordination across the platform."
+        eyebrow="Architecture"
+        title="Events and automation support service coordination at scale."
+        text="Once services and platform foundations are in place, event and automation models explain how the ecosystem responds, coordinates, and operates dynamically."
       />
 
       <div className="grid three-up">
-        <Card title="Event Foundation" tone="event">
-          Platform events represent meaningful state changes, service activity, or interaction signals.
+        <Card title="Events" tone="event">
+          Events represent meaningful activity across services, users, and operations.
         </Card>
 
-        <Card title="Trigger Model" tone="interaction">
-          Events can initiate automation flows, notifications, orchestration logic, and operational actions.
+        <Card title="Triggers" tone="interaction">
+          Trigger logic allows events to initiate responses, workflows, and coordinated actions.
         </Card>
 
-        <Card title="Workflow Logic" tone="core">
-          Automation allows the platform to coordinate responses across services, actors, and operational layers.
-        </Card>
-      </div>
-
-      <div className="grid two-up">
-        <Card title="Operational Value" tone="intelligence">
-          The model improves responsiveness, reduces manual effort, and supports ecosystem scalability.
+        <Card title="Automation" tone="core">
+          Automation reduces manual coordination and supports scalable service operation across the ecosystem.
         </Card>
 
-        <Card title="Architectural Role" tone="domain">
-          Event logic is part of the platform operating model, not just a technical add-on.
+        <Card title="Operational Flow" tone="domain">
+          The model helps services interact in a structured way instead of relying on isolated processes.
+        </Card>
+
+        <Card title="Responsiveness" tone="intelligence">
+          The ecosystem becomes more adaptive when activity signals can drive timely actions.
+        </Card>
+
+        <Card title="Scalable Operation" tone="governance">
+          Structured automation supports growth without requiring equivalent growth in manual control.
         </Card>
       </div>
     </Page>
@@ -546,34 +631,34 @@ function DataArchitecturePage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Data"
-        title="Data architecture supports operational control, ecosystem visibility, and long-term intelligence."
-        text="The data architecture explains how data is structured and used to support transactions, operations, analytics, governance, and platform evolution."
+        eyebrow="Architecture"
+        title="Data supports operation, visibility, and long-term ecosystem learning."
+        text="The data architecture explains how the system supports operational state, organizational context, and analytical understanding across services and ecosystem activity."
       />
 
       <div className="grid three-up">
         <Card title="Operational Data" tone="data">
-          Supports service execution, user activity, workflow state, and transaction-level operation.
+          Supports service execution, user activity, process state, and day-to-day operation.
         </Card>
 
         <Card title="Contextual Data" tone="core">
-          Supports tenant-specific context, platform rules, ecosystem participation, and service relationships.
+          Supports tenant context, service relationships, roles, and control structures.
         </Card>
 
         <Card title="Analytical Data" tone="intelligence">
-          Supports reporting, insight generation, operational intelligence, and future optimization.
+          Supports reporting, visibility, insight generation, and operational improvement.
         </Card>
 
         <Card title="Governed Data" tone="governance">
-          Data must align with platform governance, access control, and policy enforcement.
+          Data must align with policy, access control, and structured platform governance.
         </Card>
 
-        <Card title="Reusable Data Foundation" tone="access">
-          Data structures should support multiple services and interfaces rather than fragmented storage by service.
+        <Card title="Reusable Foundation" tone="access">
+          Data structures should support multiple services and interfaces rather than fragmented data silos.
         </Card>
 
-        <Card title="Platform Role of Data" tone="domain">
-          Data is not only stored by the platform; it is used to coordinate, observe, and improve the ecosystem.
+        <Card title="Ecosystem Visibility" tone="interaction">
+          Data gives organizations and NEXUS a better ability to understand how services and actors interact over time.
         </Card>
       </div>
     </Page>
@@ -586,34 +671,34 @@ function IntegrationsPage() {
   return (
     <Page chapter={chapter}>
       <HeroPanel
-        eyebrow="Integrations"
-        title="The ecosystem grows through controlled integrations."
-        text="The integrations chapter explains how external systems, providers, partners, and supporting technologies connect into the NEXUS ecosystem through the platform."
+        eyebrow="Architecture"
+        title="Integrations connect the ecosystem to the wider operating environment."
+        text="External systems, providers, and partners connect through controlled integration models that extend capability without breaking the platform structure."
       />
 
       <div className="grid three-up">
-        <Card title="Partner Integrations" tone="external">
-          Enable external ecosystem actors to participate in service delivery and operational flows.
+        <Card title="Provider Integrations" tone="external">
+          Enable suppliers and providers to contribute capabilities into the wider service model.
         </Card>
 
-        <Card title="System Integrations" tone="access">
-          Enable controlled connectivity with enterprise systems, third-party platforms, and operational tools.
+        <Card title="Partner Integrations" tone="interaction">
+          Enable ecosystem participants to connect services, interactions, and value delivery into the model.
         </Card>
 
-        <Card title="Provider Connectivity" tone="domain">
-          Supports participation of external service providers inside the broader ecosystem model.
+        <Card title="Enterprise Systems" tone="access">
+          Enable organizations to connect internal systems and operational tools where needed.
         </Card>
 
-        <Card title="Integration Governance" tone="governance">
-          Integration is managed through consistent access, control, and platform-level policy.
+        <Card title="Governed Connectivity" tone="governance">
+          Integrations are controlled through platform rules, access logic, and lifecycle discipline.
         </Card>
 
-        <Card title="Extensibility by Design" tone="core">
-          Integrations allow the ecosystem to expand without forcing redesign of the underlying technical foundation.
+        <Card title="Extensibility" tone="core">
+          The ecosystem grows through connection and extension, not by rebuilding the technical model each time.
         </Card>
 
-        <Card title="Business Outcome" tone="interaction">
-          The result is a broader ecosystem that can grow through connection, not through repeated rebuilding.
+        <Card title="Business Outcome" tone="domain">
+          Better integrations expand service potential while preserving operational coherence.
         </Card>
       </div>
     </Page>
@@ -623,6 +708,7 @@ function IntegrationsPage() {
 export default function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<OverviewPage />} />
