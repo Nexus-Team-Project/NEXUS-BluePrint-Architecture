@@ -122,7 +122,10 @@ function Layout({ children }) {
           </a>
 
           <div className="brand-title-stack">
-            <div className="brand-line brand-line-1">NEXUS</div>
+            <div className="brand-title-stack">
+  <div className="brand-line brand-line-2">Enterprise Digital Services Ecosystem</div>
+  <div className="brand-tag">ARCHITECTURE BLUEPRINT</div>
+</div>
             <div className="brand-line brand-line-2">Enterprise Digital Services Ecosystem</div>
             <div className="brand-tag">ARCHITECTURE BLUEPRINT</div>
           </div>
@@ -472,8 +475,7 @@ function CustomersNeedsPage() {
 }
 
 function NexusServicesPage() {
-  const chapter = chapterMap["/nexus-services"];
-
+const chapter = chapterMap["/services-through-nexus"];
   return (
     <Page chapter={chapter}>
       <HeroPanel
@@ -777,15 +779,22 @@ function IntegrationsPage() {
     </Page>
   );
 }
-
+function OverviewWithOperatingModel() {
+  return (
+    <>
+      <OperatingModelPage />
+      <OverviewPage />
+    </>
+  );
+}
 export default function App() {
   return (
     <HashRouter>
       <ScrollToTop />
       <Layout>
         <Routes>
-          <Route path="/" element={<OverviewPage />} />
-          <Route path="/overview" element={<OverviewPage />} />
+          <Route path="/" element={<OverviewWithOperatingModel />} />
+          <Route path="/overview" element={<OverviewWithOperatingModel />} />
           <Route path="/customers-needs" element={<CustomersNeedsPage />} />
           <Route path="/services-through-nexus" element={<NexusServicesPage />} />
           <Route path="/ecosystem-model" element={<EcosystemModelPage />} />

@@ -202,7 +202,18 @@ img {
   max-width: 1180px;
   margin: 0 auto 34px;
 }
+.ecosystem-diagram{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
 
+.ecosystem-diagram img{
+  width:100%;
+  max-width:1200px;
+  border-radius:18px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.35);
+}
 .page-header {
   background: linear-gradient(180deg, var(--surface) 0%, var(--surface-soft) 100%);
   border: 1px solid #e2ebf5;
@@ -568,13 +579,13 @@ img {
   text-shadow:
     0 1px 0 rgba(255,255,255,0.6);
 }
-  .page-header-logo{
-  height:42px;
+.page-header-logo{
+  height:56px;
   width:auto;
   flex-shrink:0;
 
-  opacity:0.78;
-  filter: contrast(1.05) brightness(0.96);
+  opacity:0.92;
+  filter: contrast(1.05) brightness(0.98);
 }
 
   .two-up,
