@@ -19,9 +19,9 @@ const chapters = [
     subtitle: "Why service growth creates operational complexity for organizations.",
   },
   {
-    number: "03",
-    title: "Nexus Services",
-    path: "/nexus-services",
+  number: "03",
+  title: "Services Operated Through NEXUS",
+  path: "/services-through-nexus",
     section: "FOUNDATION",
     subtitle: "How NEXUS enables organizations to operate meaningful services for their users.",
   },
@@ -366,19 +366,19 @@ function OverviewPage() {
           and scalable way.
         </p>
 
-        <p>
-          Over time these services can connect with partners, suppliers, and additional capabilities,
-          forming a broader service ecosystem around the organization and its users.
-        </p>
+       <p>
+Operating and coordinating such ecosystems requires a structured operational model.
+</p>
 
-        <p>
-          The NEXUS platform provides the infrastructure that enables these services and ecosystems
-          to operate and scale.
-        </p>
+<p>
+The NEXUS model introduces a structured approach that enables organizations to operate
+services and coordinate service ecosystems at scale.
+</p>
 
-        <p>
-          This blueprint describes the architecture that supports this model.
-        </p>
+<p>
+The platform described later in this blueprint provides the infrastructure that enables
+this model.
+</p>
       </div>
 
       <div className="grid three-up">
@@ -479,7 +479,7 @@ function NexusServicesPage() {
     <Page chapter={chapter}>
       <HeroPanel
         eyebrow="Service Model"
-        title="NEXUS enables organizations to operate services for their users."
+        title="Organizations operate services for their users through the NEXUS model."
         text="The business logic of NEXUS is service enablement. The company helps organizations operate and expand digital services in a coordinated way."
       />
 
@@ -788,7 +788,7 @@ export default function App() {
           <Route path="/" element={<OverviewPage />} />
           <Route path="/overview" element={<OverviewPage />} />
           <Route path="/customers-needs" element={<CustomersNeedsPage />} />
-          <Route path="/nexus-services" element={<NexusServicesPage />} />
+          <Route path="/services-through-nexus" element={<NexusServicesPage />} />
           <Route path="/ecosystem-model" element={<EcosystemModelPage />} />
           <Route path="/platform-foundation" element={<PlatformFoundationPage />} />
           <Route path="/system-architecture-map" element={<SystemArchitectureMapPage />} />
