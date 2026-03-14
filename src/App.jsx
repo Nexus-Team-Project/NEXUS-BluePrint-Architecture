@@ -7,22 +7,22 @@ import overviewDiagram from "./assets/nexus-echosystem-model.png";
 const chapters = [
   {
     number: "01",
-    title: "Overview",
-    path: "/overview",
-    section: "FOUNDATION",
-    subtitle: "Why organizations need a better way to operate digital services.",
-  },
-  {
-    number: "02",
     title: "Customers & Needs",
     path: "/customers-needs",
     section: "FOUNDATION",
     subtitle: "Why service growth creates operational complexity for organizations.",
   },
   {
-  number: "03",
-  title: "Services Operated Through NEXUS",
-  path: "/services-through-nexus",
+    number: "02",
+    title: "Overview",
+    path: "/overview",
+    section: "FOUNDATION",
+    subtitle: "Why organizations need a better way to operate digital services.",
+  },
+  {
+    number: "03",
+    title: "Services Operated Through NEXUS",
+    path: "/services-through-nexus",
     section: "FOUNDATION",
     subtitle: "How NEXUS enables organizations to operate meaningful services for their users.",
   },
@@ -252,47 +252,61 @@ function HeroPanel({ eyebrow, title, text }) {
 function OperatingModelPage() {
   return (
     <section className="page page-minimal">
-      <div className="operating-diagram">
-  <div className="diagram-node node-users">
-    <div className="diagram-node-title">Users</div>
-    <div className="diagram-node-text">
-      Receive value through digital service interactions
+   <div className="nexus-map">
+  <div className="map-layer map-users">
+    <div className="map-box">
+      <div className="map-title">End Users</div>
+      <div className="map-text">
+        Individuals interacting with digital services
+      </div>
     </div>
   </div>
 
-  <div className="diagram-arrow">↓</div>
-
-  <div className="diagram-node node-organizations">
-    <div className="diagram-node-title">Organizations</div>
-    <div className="diagram-node-text">
-      Operate services for their users
+<div className="ecosystem-zone">
+  <div className="ecosystem-zone-label">Ecosystem Layer</div>
+  <div className="map-layer map-participants">
+    <div className="map-box">
+      <div className="map-title">Ecosystem Participants</div>
+      <div className="map-text">
+        Organizations, individuals, and services connected to the ecosystem.
+        Participants may operate services, provide capabilities, consume services,
+        or extend the ecosystem through integrations.
+      </div>
     </div>
   </div>
 
-  <div className="diagram-arrow">↓</div>
+  <div className="map-layer map-services">
+    <div className="map-services-title">
+      Service Programs
+    </div>
 
-  <div className="diagram-node node-services">
-    <div className="diagram-node-title">Services</div>
-    <div className="diagram-node-text">
-      Deliver structured value across multiple needs
+    <div className="map-services-grid">
+      <div className="service-pill">Benefits</div>
+      <div className="service-pill">Loyalty</div>
+      <div className="service-pill">Financial</div>
+      <div className="service-pill">Employee</div>
+      <div className="service-pill">Utilities</div>
     </div>
   </div>
 
-  <div className="diagram-arrow">↓</div>
+</div>
 
-  <div className="diagram-node node-platform">
-    <div className="diagram-node-title">NEXUS Platform</div>
-    <div className="diagram-node-text">
-      Provides the infrastructure enabling this model
+  <div className="map-layer map-ecosystem">
+    <div className="map-ecosystem-title">Ecosystem Connections</div>
+
+    <div className="map-ecosystem-row">
+      <div className="ecosystem-pill">Partners</div>
+      <div className="ecosystem-pill">Providers</div>
+      <div className="ecosystem-pill">Integrations</div>
     </div>
   </div>
 
-  <div className="diagram-arrow">↓</div>
-
-  <div className="diagram-node node-ecosystems">
-    <div className="diagram-node-title">Service Ecosystems</div>
-    <div className="diagram-node-text">
-      Services connect with partners, providers, and additional capabilities
+  <div className="map-layer map-platform">
+    <div className="platform-bar">
+      <div className="map-title">NEXUS Platform</div>
+      <div className="map-text">
+        Shared infrastructure enabling service operation, integrations, automation, and scale
+      </div>
     </div>
   </div>
 </div>
@@ -304,41 +318,103 @@ function OverviewPage() {
 
   return (
     <Page chapter={chapter}>
-  <OperatingModelPage />
 
+      {/* Hero message */}
       <HeroPanel
-        eyebrow="Business Context"
-        title="Organizations today are expected to continuously deliver meaningful value to their users."
-        text="Organizations are expected to operate a growing range of digital services across customers, employees, and partners."
+        eyebrow="Ecosystem Model"
+        title="NEXUS provides the operating model for dynamic digital service ecosystems."
+        text="In the NEXUS ecosystem, participants may operate services,
+provide capabilities, consume services, or extend the ecosystem
+through integrations."
       />
 
+      {/* MAP */}
+      <div className="nexus-map">
+
+        <div className="map-layer map-users">
+          <div className="map-box">
+            <div className="map-title">End Users</div>
+            <div className="map-text">
+              People interacting with digital services
+            </div>
+          </div>
+        </div>
+
+        <div className="map-layer map-participants">
+          <div className="map-box">
+            <div className="map-title">Ecosystem Participants</div>
+            <div className="map-text">
+              Organizations, individuals, and services connected to the ecosystem.
+              Participants may operate services, provide capabilities,
+consume services, or extend the ecosystem through integrations.
+            </div>
+          </div>
+        </div>
+
+        <div className="map-layer map-services">
+          <div className="map-services-title">Service Programs</div>
+
+          <div className="map-services-grid">
+            <div className="service-pill">Benefits</div>
+            <div className="service-pill">Loyalty</div>
+            <div className="service-pill">Financial</div>
+            <div className="service-pill">Employee</div>
+            <div className="service-pill">Utilities</div>
+          </div>
+        </div>
+
+        <div className="map-layer map-platform">
+          <div className="platform-bar">
+            <div className="map-title">NEXUS Platform</div>
+            <div className="map-text">
+              Shared infrastructure enabling service operation, integrations,
+              automation, and ecosystem growth.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Explanation */}
       <div className="story-block">
+
         <p>
-          Operating and coordinating these services across providers, systems, and user interactions becomes increasingly complex.
+          Digital ecosystems are not built around fixed roles. Participants
+          within the ecosystem may operate services, provide capabilities,
+          integrate systems, or consume services depending on the context.
         </p>
 
         <p>
-          NEXUS introduces a structured model that enables organizations to operate and expand digital service ecosystems.
+          The NEXUS model provides a structured platform foundation that
+          enables these interactions to operate coherently while allowing
+          services and ecosystem relationships to expand over time.
         </p>
+
       </div>
 
+      {/* Summary cards */}
       <div className="grid three-up">
-        <Card title="Organizations" tone="interaction">
-          Organizations are the starting point of the model.
+
+        <Card title="Ecosystem Participants" tone="interaction">
+          Organizations, individuals, and services participating in the
+          ecosystem with dynamic roles.
         </Card>
 
-        <Card title="Users" tone="domain">
-          Users receive value through services.
+        <Card title="Service Ecosystem" tone="core">
+          Service programs such as benefits, loyalty, financial services,
+          employee programs, and digital utilities.
         </Card>
 
-        <Card title="Enablement" tone="core">
-          NEXUS enables structured and scalable service operation.
+        <Card title="Platform Foundation" tone="intelligence">
+          The NEXUS platform provides the shared infrastructure enabling
+          integrations, automation, and scalable ecosystem operation.
         </Card>
+
       </div>
+
     </Page>
   );
 }
-
 function CustomersNeedsPage() {
   const chapter = chapterMap["/customers-needs"];
 
