@@ -14,22 +14,21 @@ function CorePlatformServicesPage({ chapter }) {
 
       <div className="grid three-up">
         <Card title="Identity & Access" tone="access">
-          Supports access control, participation control, and interface entry across user and management contexts.
+          Supports access control, participation control, and access points across user and management contexts.
         </Card>
 
-        <Card title="Tenant Context" tone="core">
+        <Card title="Tenant Management" tone="core">
           Preserves organizational boundaries and controlled operation on shared infrastructure.
         </Card>
 
         <Card title="Workflow & Coordination" tone="event">
-          Supports service sequencing, orchestration, and coordinated platform behavior.
-        </Card>
+Supports service sequencing, orchestration, and event-driven platform coordination.        </Card>
 
         <Card title="Policy & Governance" tone="governance">
           Supports rules, constraints, and platform-wide control logic.
         </Card>
 
-        <Card title="Interaction Support" tone="interaction">
+        <Card title="Service Interaction Layer" tone="interaction">
           Enables continuity across user-facing and management-facing service journeys.
         </Card>
 

@@ -9,7 +9,7 @@ function IntegrationsPage({ chapter }) {
       <HeroPanel
         eyebrow="Architecture"
         title="Integrations connect the ecosystem to the wider operating environment."
-        text="External systems, providers, and partners connect through controlled integration models that extend capability without breaking the platform structure."
+        text="External systems, providers, and partners connect through controlled integration models based on APIs, events, and secure platform interfaces."
       />
 
       <div className="grid three-up">
@@ -34,8 +34,7 @@ function IntegrationsPage({ chapter }) {
         </Card>
 
         <Card title="Business Outcome" tone="domain">
-          Better integrations expand service potential while preserving operational coherence.
-        </Card>
+Better integrations expand ecosystem value while preserving operational control.        </Card>
       </div>
     </Page>
   );

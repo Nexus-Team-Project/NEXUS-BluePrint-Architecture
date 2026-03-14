@@ -31,8 +31,7 @@ function PlatformFoundationPage({ chapter }) {
 
       <div className="grid two-up">
         <Card title="Interfaces" tone="access">
-          The platform is accessed through UI, MI, and controlled system interfaces, enabling both
-          user-facing and management-facing operation.
+       The platform is accessed through user interfaces, management interfaces, system APIs, and agent interfaces, enabling interaction by users, organizations, external systems, and AI-driven agents.
         </Card>
 
         <Card title="Consistency" tone="governance">

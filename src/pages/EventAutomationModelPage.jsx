@@ -18,7 +18,7 @@ function EventAutomationModelPage({ chapter }) {
         </Card>
 
         <Card title="Triggers" tone="interaction">
-          Trigger logic allows events to initiate responses, workflows, and coordinated actions.
+          Trigger logic allows events to initiate workflows, service reactions, and coordinated actions.
         </Card>
 
         <Card title="Automation" tone="core">

@@ -8,14 +8,14 @@ function CustomersNeedsPage({ chapter }) {
     <Page chapter={chapter}>
       <HeroPanel
         eyebrow="Operational Reality"
-        title="The challenge is not only creating services. It is operating them well."
+        title="The challenge is not only creating digital services.
+The real challenge is operating many services coherently as complexity grows."
         text="As organizations expand service offerings, complexity grows across providers, processes, interactions, and data flows."
       />
 
       <div className="story-block">
         <p>
-          Organizations today operate in environments where users expect continuous access to
-          valuable digital services.
+          Organizations today operate in environments where users expect continuous access to valuable digital services across multiple channels and ecosystems.
         </p>
 
         <p>
@@ -29,13 +29,12 @@ function CustomersNeedsPage({ chapter }) {
         </p>
 
         <p>
-          However, managing these services is not simple.
+          However, coordinating these services becomes increasingly difficult as complexity grows.
         </p>
 
         <p>
-          Each service often involves different suppliers, integrations, operational processes,
-          user interactions, and data flows. As more services are introduced, organizations must
-          manage growing complexity across multiple systems and providers.
+          Each service introduces new suppliers, integrations, operational processes, user interactions, and data flows that must be coordinated across the organization.
+          As services multiply, the number of integrations grows rapidly, making service environments increasingly difficult to maintain and evolve.
         </p>
 
         <p>
@@ -45,7 +44,8 @@ function CustomersNeedsPage({ chapter }) {
         </p>
 
         <p>
-          Organizations therefore face a structural challenge:
+          The core problem is not building services.
+The core problem is coordinating them. Organizations therefore face a structural challenge:
         </p>
 
         <p className="highlight-line">
@@ -59,13 +59,16 @@ function CustomersNeedsPage({ chapter }) {
 
       <div className="grid two-up">
         <Card title="Growing Service Count" tone="interaction">
-          Service expansion is natural, but it introduces new suppliers, processes, and operating
-          demands that are difficult to coordinate over time.
+          Service expansion is natural, but each new service introduces suppliers, processes, and operational dependencies that are increasingly difficult to coordinate.
         </Card>
 
         <Card title="Lack of a Unified Model" tone="governance">
           Without a structured model, organizations accumulate fragmented services rather than a
           scalable service system.
+        </Card>
+         <Card title="Integration Complexity" tone="governance">
+          Each new service introduces additional integrations, partners, and operational dependencies.
+           Over time this creates fragile service environments that are difficult to manage and expand.
         </Card>
       </div>
     </Page>

@@ -1,38 +1,38 @@
 export const chapters = [
   {
     number: "01",
-    title: "Customers & Needs",
+    title: "The Operational Complexity of Modern Digital Services",
     path: "/customers-needs",
     section: "FOUNDATION",
-    subtitle: "Why service growth creates operational complexity for organizations.",
+    subtitle: "Why organizations struggle to manage growing digital service ecosystems.",
   },
   {
     number: "02",
-    title: "Overview",
+    title: "NEXUS Vision",
     path: "/overview",
     section: "FOUNDATION",
-    subtitle: "Why organizations need a better way to operate digital services.",
+    subtitle: "NEXUS enables organizations to transform isolated services into coordinated digital ecosystems.",
   },
   {
     number: "03",
-    title: "Services Operated Through NEXUS",
+    title: "Operating Services Through the NEXUS Model",
     path: "/services-through-nexus",
     section: "FOUNDATION",
-    subtitle: "How NEXUS enables organizations to operate meaningful services for their users.",
+    subtitle: "How organizations operate modular services and structure them into composable service programs.",
   },
   {
     number: "04",
     title: "Ecosystem Model",
     path: "/ecosystem-model",
     section: "ECOSYSTEM",
-    subtitle: "How services connect into a broader ecosystem around organizations and users.",
+    subtitle: "The NEXUS ecosystem connects organizations, providers, partners, and services into a shared service environment.",
   },
   {
     number: "05",
     title: "Platform Foundation",
     path: "/platform-foundation",
     section: "PLATFORM",
-    subtitle: "The role of the platform as the enabling infrastructure of the ecosystem.",
+    subtitle: "The platform provides the operational foundation that enables the ecosystem to function.",
   },
   {
     number: "06",
@@ -67,7 +67,7 @@ export const chapters = [
     title: "Integrations",
     path: "/integrations",
     section: "ARCHITECTURE",
-    subtitle: "How providers, partners, and enterprise systems connect into the model.",
+    subtitle: "How providers, partners, and enterprise systems connect into the NEXUS ecosystem.",
   },
 ];
 
