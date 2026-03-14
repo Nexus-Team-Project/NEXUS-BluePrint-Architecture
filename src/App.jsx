@@ -1,19 +1,12 @@
-import { HashRouter, Routes, Route, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
+
 import "./App.css";
 import logo from "./assets/nexus-logo.png";
-import { chapters, sectionOrder, chapterMap } from "./data/chapters";
 
-import OverviewPage from "./pages/OverviewPage";
-import CustomersNeedsPage from "./pages/CustomersNeedsPage";
-import NexusServicesPage from "./pages/NexusServicesPage";
-import EcosystemModelPage from "./pages/EcosystemModelPage";
-import PlatformFoundationPage from "./pages/PlatformFoundationPage";
-import SystemArchitectureMapPage from "./pages/SystemArchitectureMapPage";
-import CorePlatformServicesPage from "./pages/CorePlatformServicesPage";
-import EventAutomationModelPage from "./pages/EventAutomationModelPage";
-import DataArchitecturePage from "./pages/DataArchitecturePage";
-import IntegrationsPage from "./pages/IntegrationsPage";
+import { chapters, sectionOrder } from "./data/chapters";
+
+import AppRoutes from "./AppRoutes";
 
 function ScrollToTop() {
   const location = useLocation();
@@ -102,56 +95,11 @@ function Layout({ children }) {
 
 export default function App() {
   return (
-    <HashRouter>
+    <>
       <ScrollToTop />
       <Layout>
-        <Routes>
-          <Route
-            path="/"
-            element={<CustomersNeedsPage chapter={chapterMap["/customers-needs"]} />}
-          />
-          <Route
-            path="/overview"
-            element={<OverviewPage chapter={chapterMap["/overview"]} />}
-          />
-          <Route
-            path="/customers-needs"
-            element={<CustomersNeedsPage chapter={chapterMap["/customers-needs"]} />}
-          />
-          <Route
-            path="/services-through-nexus"
-            element={<NexusServicesPage chapter={chapterMap["/services-through-nexus"]} />}
-          />
-          <Route
-            path="/ecosystem-model"
-            element={<EcosystemModelPage chapter={chapterMap["/ecosystem-model"]} />}
-          />
-          <Route
-            path="/platform-foundation"
-            element={<PlatformFoundationPage chapter={chapterMap["/platform-foundation"]} />}
-          />
-          <Route
-            path="/system-architecture-map"
-            element={<SystemArchitectureMapPage chapter={chapterMap["/system-architecture-map"]} />}
-          />
-          <Route
-            path="/core-platform-services"
-            element={<CorePlatformServicesPage chapter={chapterMap["/core-platform-services"]} />}
-          />
-          <Route
-            path="/event-automation-model"
-            element={<EventAutomationModelPage chapter={chapterMap["/event-automation-model"]} />}
-          />
-          <Route
-            path="/data-architecture"
-            element={<DataArchitecturePage chapter={chapterMap["/data-architecture"]} />}
-          />
-          <Route
-            path="/integrations"
-            element={<IntegrationsPage chapter={chapterMap["/integrations"]} />}
-          />
-        </Routes>
+        <AppRoutes />
       </Layout>
-    </HashRouter>
+    </>
   );
 }
